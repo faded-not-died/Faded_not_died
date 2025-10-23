@@ -137,6 +137,22 @@ section {
 }
 .book button { margin-bottom: 20px; }
 
+/* Like Section */
+.like-section {
+  margin: 15px 0;
+  font-size: 1em;
+  text-align: center;
+}
+.like-section input {
+  transform: scale(1.2);
+  margin-right: 8px;
+}
+#like-count {
+  margin-top: 8px;
+  color: #00BFFF;
+  font-weight: bold;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -203,6 +219,7 @@ footer {
 <section id="books" class="books">
   <h2>My Books</h2>
   <div class="book-container">
+    
     <!-- Example Book -->
     <div class="book">
       <img src="temporary.jpg" alt="Temporary Book Cover">
@@ -211,7 +228,24 @@ footer {
       <a href="https://drive.google.com/file/d/12e6Iem2G6ZPsSJ8To9xLU-KTQ5z2Z0DQ/view" target="_blank">
         <button>Read PDF</button>
       </a>
+
+      <!-- Like Section -->
+      <div class="like-section">
+        <label>
+          <input type="checkbox" id="like-checkbox" onclick="toggleLike()"> Did you like it?
+        </label>
+        <p id="like-count">❤️ 0 Likes</p>
+      </div>
     </div>
+
+    <!-- To add a new book:
+    Copy the entire <div class="book">...</div> block above,
+    paste it below, and update:
+      - The image file name (e.g., "newbook.jpg")
+      - The title <h3>Book Title</h3>
+      - The description <p>...</p>
+      - The PDF link in <a href="..."> -->
+    
   </div>
 </section>
 
@@ -220,6 +254,22 @@ footer {
   <p>Follow me on Instagram: <a href="https://instagram.com/faded_not_died" target="_blank">@faded_not_died</a></p>
   <p>&copy; 2025 Adarsh Menon. All Rights Reserved.</p>
 </footer>
+
+<!-- Script for Like Counter -->
+<script>
+  let likeCount = 0;
+  const likeCheckbox = document.getElementById("like-checkbox");
+  const likeCountDisplay = document.getElementById("like-count");
+
+  function toggleLike() {
+    if (likeCheckbox.checked) {
+      likeCount++;
+    } else {
+      likeCount--;
+    }
+    likeCountDisplay.textContent = `❤️ ${likeCount} Likes`;
+  }
+</script>
 
 </body>
 </html>
