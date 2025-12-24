@@ -4,334 +4,211 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Faded_not_died</title>
+
 <meta name="description" content="Faded_not_died by Adarsh Menon - Explore my stories and books online.">
 <meta name="keywords" content="Adarsh Menon, Faded_not_died, books, stories, fiction, reading">
 <meta name="author" content="Adarsh Menon">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* Body */
-body {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  background-color: #121212;
-  color: #EAEAEA;
-  overflow-x: hidden;
+body{
+  font-family:'Roboto',sans-serif;
+  background:#121212;
+  color:#EAEAEA;
+  line-height:1.6;
 }
 
-/* Buttons & Links */
-a {
-  color: #00BFFF;
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
+a{color:#00BFFF;text-decoration:none;}
+a:hover{text-decoration:underline;}
 
-button {
-  background-color: #00BFFF;
-  color: #121212;
-  border: none;
-  padding: 12px 24px;
-  margin: 10px 5px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: 0.3s;
-  font-size: 1em;
+button{
+  background:#00BFFF;
+  color:#121212;
+  border:none;
+  padding:12px 24px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s;
 }
-button:hover {
-  background-color: #1E90FF;
-  transform: scale(1.05);
+button:hover{
+  background:#1E90FF;
+  transform:scale(1.05);
 }
 
-/* Sections */
-section {
-  padding: 60px 20px;
+section{padding:60px 20px;}
+
+.home{
+  text-align:center;
+  background:url('https://source.unsplash.com/1600x900/?night,stars') center/cover fixed;
+  padding:100px 20px;
 }
 
-/* Home Section */
-.home {
-  text-align: center;
-  background-image: url('https://source.unsplash.com/1600x900/?night,stars');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  padding: 100px 20px;
+.home h1{font-size:3em;margin-bottom:20px;}
+.home p{font-size:1.2em;margin-bottom:20px;}
+
+.about{
+  background:#1e1e1e;
+  text-align:center;
 }
-.home h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+.about h2{font-size:2.5em;margin-bottom:20px;}
+.about p{max-width:800px;margin:10px auto;}
+
+.books{
+  background:#1e1e1e;
+  text-align:center;
 }
-.home p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+.books h2{font-size:2.5em;margin-bottom:40px;}
+
+.book-container{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
 }
 
-/* About Section */
-.about {
-  background: rgba(30,30,30,0.8);
-  text-align: center;
-  padding: 60px 20px;
+.book{
+  width:250px;
+  background:rgba(255,255,255,0.05);
+  border-radius:10px;
+  overflow:hidden;
+  transition:0.3s;
 }
-.about h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+.book:hover{transform:scale(1.05);}
+.book img{width:100%;}
+
+.book h3{padding:15px;}
+.book p{padding:0 15px 15px;}
+
+.like-section{
+  padding:15px;
+  text-align:center;
 }
-.about p {
-  max-width: 800px;
-  margin: 10px auto;
-  font-size: 1.1em;
+.like-section input{
+  transform:scale(1.2);
+  margin-right:6px;
 }
-.about img {
-  margin-top: 20px;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 10px;
+.like-count{
+  margin-top:8px;
+  color:#00BFFF;
+  font-weight:bold;
 }
 
-/* Books Section */
-.books {
-  background: #1E1E1E;
-  text-align: center;
-}
-.books h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-}
-.book-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 0 10px;
-}
-.book {
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-  overflow: hidden;
-  width: 250px;
-  transition: transform 0.3s;
-  text-align: center;
-}
-.book:hover { transform: scale(1.05); }
-.book img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.book h3 {
-  padding: 15px;
-  font-size: 1.2em;
-}
-.book p {
-  padding: 0 15px 15px;
-  font-size: 1em;
-}
-.book button { margin-bottom: 20px; }
-
-/* Like Section */
-.like-section {
-  margin: 15px 0;
-  font-size: 1em;
-  text-align: center;
-}
-.like-section input {
-  transform: scale(1.2);
-  margin-right: 8px;
-}
-#like-count {
-  margin-top: 8px;
-  color: #00BFFF;
-  font-weight: bold;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 30px 20px;
-  background: rgba(30,30,30,0.8);
-  font-size: 0.9em;
-}
-
-/* Responsive Styles */
-@media (max-width: 1024px) {
-  .home h1 { font-size: 2.5em; }
-  .home p { font-size: 1.1em; }
-}
-
-@media (max-width: 768px) {
-  .home {
-    background-attachment: scroll; /* smoother for phones */
-    padding: 80px 15px;
-  }
-  .home h1 { font-size: 2.2em; }
-  .home p { font-size: 1em; }
-  button { width: 90%; max-width: 300px; }
-
-  .book-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .about img {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .home h1 { font-size: 1.8em; }
-  .home p { font-size: 0.95em; }
-  .about h2, .books h2 { font-size: 2em; }
-  .book { width: 90%; }
+footer{
+  background:#1e1e1e;
+  text-align:center;
+  padding:20px;
 }
 </style>
 </head>
+
 <body>
 
-<!-- Home Section -->
+<!-- HOME -->
 <section class="home">
   <h1>stories_lost_in_void</h1>
   <p>by ADARSH MENON</p>
-  <p>Dive into my stories and explore the world of emotions and imagination.</p>
   <a href="#books"><button>See My Books</button></a>
-  <a href="#about"><button>About Me</button></a>
-  <a href="https://instagram.com/stories_lost_in_void" target="_blank"><button>Follow on Instagram</button></a>
 </section>
 
-<!-- About Section -->
-<section id="about" class="about">
+<!-- ABOUT -->
+<section class="about" id="about">
   <h2>About Me</h2>
-  <p>Hi, I’m <strong>Adarsh Menon</strong>. I write stories that capture fleeting moments and turn emotions into words.</p>
-  <p>My books are a journey through imagination, feelings, and life’s unexpected twists. Welcome to my world of stories!</p>
-  <img src="stories_lost_in_void.jpg" alt="About Me">
+  <p>Hi, I’m <strong>Adarsh Menon</strong>. I write stories that turn emotions into words.</p>
 </section>
 
-<!-- Books Section -->
-<section id="books" class="books">
+<!-- BOOKS -->
+<section class="books" id="books">
   <h2>My Books</h2>
+
   <div class="book-container">
-    
-    <!-- Example Book -->
+
+    <!-- BOOK 1 -->
     <div class="book">
-      <img src="temporary.jpg" alt="Temporary Book Cover">
+      <img src="temporary.jpg">
       <h3>Temporary</h3>
-      <p>Explore fleeting moments and deep emotions in my first story.</p>
-      <a href="https://drive.google.com/file/d/12e6Iem2G6ZPsSJ8To9xLU-KTQ5z2Z0DQ/view" target="_blank">
-        <button>Read PDF</button>
-      </a>
+      <p>Explore fleeting moments and deep emotions.</p>
+      <a href="#"><button>Read PDF</button></a>
 
-      <!-- Like Section -->
       <div class="like-section">
         <label>
-          <input type="checkbox" id="like-checkbox" onclick="toggleLike()"> Did you like it?
+          <input type="checkbox" onclick="toggleLike(this)"> Did you like it?
         </label>
-        <p id="like-count">❤️ 0 Likes</p>
+        <p class="like-count">❤️ 0 Likes</p>
       </div>
     </div>
 
-
-
+    <!-- BOOK 2 -->
     <div class="book">
-      <img src="THE GLUTS.jpg" alt="THE GLUTS Book Cover">
+      <img src="THE GLUTS.jpg">
       <h3>THE GLUTS</h3>
-      <p>A man saved from suicide discovers his rescuers are time-eating entities who keep him alive only to slowly consume his remaining life..</p>
-      <a href="https://drive.google.com/file/d/1Xs08EVFCNnGCZFUozmcN3nq6zuKukvLc/view?usp=drivesdk" target="_blank">
-        <button>Read PDF</button>
-      </a>
+      <p>A man saved from suicide discovers time-eating entities.</p>
+      <a href="#"><button>Read PDF</button></a>
 
-      <!-- Like Section -->
       <div class="like-section">
         <label>
-          <input type="checkbox" id="like-checkbox" onclick="toggleLike()"> Did you like it?
+          <input type="checkbox" onclick="toggleLike(this)"> Did you like it?
         </label>
-        <p id="like-count">❤️ 0 Likes</p>
+        <p class="like-count">❤️ 0 Likes</p>
       </div>
     </div>
 
-      <div class="book">
-      <img src="Room 21.jpg" alt="Room 21 Book Cover">
-      <h3>ROOM 21 : THE POOL THAT FORGOT THE SUN </h3>
-      <p>Five friends dive into a pool and surface in a world where the sun is dead and reality rots.
-Each step takes them deeper into a nightmare that feeds on memory, fear, and sacrifice.
-Only three return — but something came back with them.</p>
-      <a href="https://drive.google.com/file/d/1487cmcsrgny9Sv_y_Vit2n1VYFKg2UAH/view?usp=drivesdk">
-        <button>Read PDF</button>
-      </a>
+    <!-- BOOK 3 -->
+    <div class="book">
+      <img src="Room 21.jpg">
+      <h3>ROOM 21</h3>
+      <p>A pool where the sun is dead and reality rots.</p>
+      <a href="#"><button>Read PDF</button></a>
 
-      <!-- Like Section -->
       <div class="like-section">
         <label>
-          <input type="checkbox" id="like-checkbox" onclick="toggleLike()"> Did you like it?
+          <input type="checkbox" onclick="toggleLike(this)"> Did you like it?
         </label>
-        <p id="like-count">❤️ 0 Likes</p>
+        <p class="like-count">❤️ 0 Likes</p>
       </div>
     </div>
 
+    <!-- BOOK 4 -->
+    <div class="book">
+      <img src="Academic Block.jpg">
+      <h3>The Academic Block</h3>
+      <p>Only one name remains alive at 1:00 A.M.</p>
+      <a href="#"><button>Read PDF</button></a>
 
-
-
-     <div class="book">
-      <img src="Academic Block.jpg" alt="Academic Block Book Cover">
-      <h3>The Academic Block : Third Floor </h3>
-      <p>They went to prove the ghost was fake…
-Now only one of their names is still alive at 1:00 A.M.</p>
-      <a href="https://drive.google.com/file/d/1s5HeBrV_AC-0YI0wT2eQxqdnWftD8jHV/view?usp=drivesdk">
-        <button>Read PDF</button>
-      </a>
-
-      <!-- Like Section -->
       <div class="like-section">
         <label>
-          <input type="checkbox" id="like-checkbox" onclick="toggleLike()"> Did you like it?
+          <input type="checkbox" onclick="toggleLike(this)"> Did you like it?
         </label>
-        <p id="like-count">❤️ 0 Likes</p>
+        <p class="like-count">❤️ 0 Likes</p>
       </div>
     </div>
 
-
-
-
-    
-    <!-- To add a new book:
-    Copy the entire <div class="book">...</div> block above,
-    paste it below, and update:
-      - The image file name (e.g., "newbook.jpg")
-      - The title <h3>Book Title</h3>
-      - The description <p>...</p>
-      - The PDF link in <a href="..."> -->
-    
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
-  <p>Follow me on Instagram: <a href="https://instagram.com/stories_lost_in_void" target="_blank">@stories_lost_in_void</a></p>
-  <p>&copy; 2025 Adarsh Menon. All Rights Reserved.</p>
+  <p>&copy; 2025 Adarsh Menon</p>
 </footer>
 
-<!-- Script for Like Counter -->
+<!-- LIKE SCRIPT -->
 <script>
-  let likeCount = 0;
-  const likeCheckbox = document.getElementById("like-checkbox");
-  const likeCountDisplay = document.getElementById("like-count");
+function toggleLike(box){
+  const likeText = box
+    .closest(".like-section")
+    .querySelector(".like-count");
 
-  function toggleLike() {
-    if (likeCheckbox.checked) {
-      likeCount++;
-    } else {
-      likeCount--;
-    }
-    likeCountDisplay.textContent = `❤️ ${likeCount} Likes`;
-  }
+  let count = parseInt(likeText.textContent.match(/\d+/)[0]);
+
+  box.checked ? count++ : count--;
+
+  likeText.textContent = `❤️ ${count} Likes`;
+}
 </script>
 
 </body>
